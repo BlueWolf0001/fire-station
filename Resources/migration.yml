@@ -2254,14 +2254,17 @@ ClothingMaskGasLLH: null
 ClothingMaskGasRRH: null
 
 # Удаленные стены
-ScpWallConcreteLightContaimentCrack: ScpWallConcreteLightContaiment
+ScpWallConcreteLightContaimentCrack: ScpWallConcreteLightContainment
 ScpWallConcreteScienceCrack: ScpWallConcreteScience
 ScpWallConcreteEngineerCrack: ScpWallConcreteEngineer
 ScpWallConcreteMedicalCrack: ScpWallConcreteMedical
 ScpWallConcreteCrack: ScpWallConcrete
 
-# Rename
+ScpWallConcreteMetallHardContaiment: ScpWallMetalHardContainment
+ScpWallConcreteMetallHardContaimentDiagonal: ScpWallMetalHardContainmentDiagonal
+ScpWallConcreteLightContaiment: ScpWallConcreteLightContainment
 
+# Rename
 FSConcreteCurbNorth: ConcreteCurbIn
 FSConcreteCurbSouth: ConcreteCurbOut
 FSConcreteCurbCornerNorth: ConcreteCurbCornerIn
