@@ -143,14 +143,13 @@
   # - type: ContainerContainer
   #   containers:
   #     ballistic-ammo: !type:Container
-  - type: HitscanBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: BulletPistolTraceSP
     fireCost: 100
   - type: Battery
     maxCharge: 1000
     startingCharge: 1000
   - type: BatterySelfRecharger
-    autoRecharge: true
     autoRechargeRate: 25
   - type: AmmoCounter
 
@@ -191,7 +190,6 @@
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeCaselessRifle
         priority: 1
         whitelist:
           tags:
@@ -226,6 +224,8 @@
     - SemiAuto
     soundGunshot:
       collection: glock18 # Sunrise-Edit
+  - type: StealTarget
+    stealGroup: OfficerHandgun
 
 - type: entity
   name: N1984
