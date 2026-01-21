@@ -3,11 +3,15 @@
   name: job-name-junior-researcher
   description: job-description-junior-researcher
   playTimeTracker: JobJuniorResearcher
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 3600
   startingGear: JuniorResearcherGear
   icon: JobJuniorResearcher
   supervisors: job-supervisors-scientific-service-director
   canBeAntag: true
   displayWeight: 0
+  weight: 785
   accessGroups:
   - JuniorResearcher
   special:
@@ -23,6 +27,7 @@
       - Necrophobia
       proximityBlockerLevel: None
       seenBlockerLevel: None
+    - type: ShowScp096FaceDamageHud
 
 - type: startingGear
   id: JuniorResearcherGear

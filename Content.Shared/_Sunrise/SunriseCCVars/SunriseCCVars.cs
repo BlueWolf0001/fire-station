@@ -247,7 +247,7 @@ public sealed partial class SunriseCCVars : CVars
      * Lobby Changelog
      */
 
-    public static readonly CVarDef<string> LobbyChangelogsList =
+    public static readonly CVarDef<string> LobbyChangelogsList = // Fire edit
         CVarDef.Create("lobby_changelog.list", "ChangelogFire.yml", CVar.SERVER | CVar.REPLICATED);
 
     /*
@@ -294,13 +294,14 @@ public sealed partial class SunriseCCVars : CVars
 
     public static readonly CVarDef<bool> ShowMapVotes = CVarDef.Create("vote.show_map_votes", true);
 
-    public static readonly CVarDef<bool> RunMapVoteAfterRestart =
-        CVarDef.Create("vote.run_map_vote_after_restart", false);
+    public static readonly CVarDef<bool> RunMapVoteAfterRestart = // Fire edit
+        CVarDef.Create("vote.run_map_vote_after_restart", true);
 
     public static readonly CVarDef<bool> RunPresetVoteAfterRestart =
         CVarDef.Create("vote.run_preset_vote_after_restart", false);
 
-    public static readonly CVarDef<int> VotingsDelay = CVarDef.Create("vote.votings_delay", 60);
+    // Fire edit
+    public static readonly CVarDef<int> VotingsDelay = CVarDef.Create("vote.votings_delay", 20);
 
     public static readonly CVarDef<bool> VoteMusicDisable =
         CVarDef.Create("vote.music_disable", true, CVar.CLIENTONLY | CVar.ARCHIVE);
@@ -527,8 +528,8 @@ public sealed partial class SunriseCCVars : CVars
     /// <summary>
     /// Включена ли санитизация чата (антиспам от набегаторов)
     /// </summary>
-    public static readonly CVarDef<bool> ChatSanitizationEnable =
-        CVarDef.Create("chatsan.enable", true, CVar.SERVER | CVar.ARCHIVE);
+    public static readonly CVarDef<bool> ChatSanitizationEnable = // Fire edit
+        CVarDef.Create("chatsan.enable", false, CVar.SERVER | CVar.ARCHIVE);
 
     /// <summary>
     /// Контроллирует поведение санитизации.
@@ -547,8 +548,8 @@ public sealed partial class SunriseCCVars : CVars
     /// <summary>
     /// Название корпорации для подстановки в документы
     /// </summary>
-    public static readonly CVarDef<string> DocumentCorporationName =
-        CVarDef.Create("doc.corp_name", "Nanotrasen", CVar.SERVER | CVar.ARCHIVE);
+    public static readonly CVarDef<string> DocumentCorporationName = // Fire edit
+        CVarDef.Create("doc.corp_name", "SCP Foundation", CVar.SERVER | CVar.ARCHIVE);
 
     /// <summary>
     /// Смешение автозаполнения времени в часах
@@ -559,8 +560,8 @@ public sealed partial class SunriseCCVars : CVars
     /// <summary>
     /// Смешение автозаполнения времени в годах
     /// </summary>
-    public static readonly CVarDef<int> DocumentYearOffset =
-        CVarDef.Create("doc.year_offset", 1000, CVar.SERVER | CVar.ARCHIVE);
+    public static readonly CVarDef<int> DocumentYearOffset = // Fire edit
+        CVarDef.Create("doc.year_offset", 0, CVar.SERVER | CVar.ARCHIVE);
 
     /// <summary>
     /// Пул шаблонов документов, используемых при создании документов на принтере

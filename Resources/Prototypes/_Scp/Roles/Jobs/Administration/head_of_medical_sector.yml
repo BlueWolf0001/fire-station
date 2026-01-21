@@ -3,10 +3,17 @@
   name: job-name-head-of-medical-sector
   description: job-description-head-of-medical-sector
   playTimeTracker: JobHeadOfMedicalSector
-  requirements: # TODO: Поменять после того, как игроки наберут время на новых ролях
-    - !type:OverallPlaytimeRequirement
-      time: 108000 # 30 часов
-  weight: 10
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobMedicalSpecialist
+      time: 7200
+    - !type:RoleTimeRequirement
+      role: JobPharmaceuticalSpecialist
+      time: 10800
+    - !type:DepartmentTimeRequirement
+      department: MedicalService
+      time: 36000
+  weight: 945
   startingGear: HeadOfMedicalSectorGear
   icon: JobHeadOfMedicalSector
   supervisors: job-supervisors-director
@@ -23,10 +30,16 @@
       class: C
     - type: AccessLevel
       level: Three
+    - type: ScpAnnounceOnSpawn
+      text: head-announce-on-spawn
+      channels:
+      - MedicalService
+      includeJobName: true
     - type: Fear
       phobias:
       - Exoremophobia
       # Врачи не пугаются трупов, у них не будет некрофобии
+    - type: ShowScp096FaceDamageHud
 
 - type: startingGear
   id: HeadOfMedicalSectorGear

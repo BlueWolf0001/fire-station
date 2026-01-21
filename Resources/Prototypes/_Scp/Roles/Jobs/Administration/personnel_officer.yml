@@ -3,10 +3,20 @@
   name: job-name-personnel-officer
   description: job-description-personnel-officer
   playTimeTracker: JobPersonnelOfficer
-  requirements: # TODO: Поменять после того, как игроки наберут время на новых ролях
-  - !type:OverallPlaytimeRequirement
-    time: 108000 # 30 часов
-  weight: 20
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: ExternalAdministrativeZoneSecurityService
+      time: 18000
+    - !type:DepartmentTimeRequirement
+      department: MedicalService
+      time: 18000
+    - !type:DepartmentTimeRequirement
+      department: EngineeringTechnicalService
+      time: 18000
+    - !type:DepartmentTimeRequirement
+      department: Administration
+      time: 18000
+  weight: 950
   startingGear: PersonnelOfficerGear
   icon: JobPersonnelOfficer
   supervisors: job-supervisors-director
@@ -25,6 +35,11 @@
       class: C
     - type: AccessLevel
       level: Three
+    - type: ScpAnnounceOnSpawn
+      text: head-announce-on-spawn
+      channels:
+      - FoodAndSanitationService
+      includeJobName: true
 
 - type: startingGear
   id: PersonnelOfficerGear

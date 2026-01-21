@@ -3,13 +3,15 @@
   name: job-name-medical-specialist
   description: job-description-medical-specialist
   playTimeTracker: JobMedicalSpecialist
-  requirements: # TODO: Поменять после того, как игроки наберут время на новых ролях
-  - !type:OverallPlaytimeRequirement
-    time: 18000 # 5 часов
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: MedicalService
+    time: 7200
   startingGear: MedicalSpecialistGear
   icon: JobMedicalSpecialist
   supervisors: job-supervisors-head-of-medical-sector
   displayWeight: 20
+  weight: 770
   accessGroups:
   - CommonMedicalJob
   special:
@@ -23,6 +25,7 @@
       phobias:
       - Exoremophobia
       # Врачи не пугаются трупов, у них не будет некрофобии
+    - type: ShowScp096FaceDamageHud
 
 - type: startingGear
   id: MedicalSpecialistGear

@@ -1,0 +1,158 @@
+﻿- type: reagent
+  id: Scp096Tears
+  name: reagent-name-scp096-tears
+  parent: BaseDrink
+  desc: reagent-desc-scp096-tears
+  evaporationSpeed: 0.05
+  absorbent: true
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: salty
+  color: "#B4D6FA66"
+  boilingPoint: 100.0
+  meltingPoint: 0.0
+  friction: 0.4
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:ChemHealEyeDamage
+      - !type:Emote
+        emote: Crying
+        probability: 0.3
+      - !type:Paralyze
+        probability: 0.1
+      - !type:AdjustTemperature
+        amount: -3000
+      - !type:MovespeedModifier
+        walkSpeedModifier: 1.1
+        sprintSpeedModifier: 1.1
+        statusLifetime: 10
+      - !type:Jitter
+      - !type:ChemVomit
+        probability: 0.05
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 4
+        conditions:
+        - !type:OrganType
+          type: Dwarf
+          shouldHave: false
+    Gas:
+      effects:
+      - !type:HealthChange
+        scaleByQuantity: true
+        ignoreResistances: true
+        conditions:
+        - !type:OrganType
+          type: Slime
+          shouldHave: true
+        damage:
+          types:
+            Heat: 3
+  plantMetabolism:
+  - !type:PlantAdjustWater
+    amount: 2
+  - !type:PlantAdjustNutrition
+    amount: 1.5
+  - !type:PlantAdjustHealth
+    amount: 3
+  reactiveEffects:
+    Flammable:
+      methods: [ Touch ]
+      effects:
+      - !type:FlammableReaction
+        multiplier: 0.5
+      - !type:AdjustTemperature
+        amount: -2000
+    Acidic:
+      methods: [ Touch ]
+      effects:
+      - !type:HealthChange
+        scaleByQuantity: true
+        ignoreResistances: false
+        damage:
+          types:
+            Caustic: 0.3
+      - !type:AdjustTemperature
+        amount: -1500
+      - !type:Jitter
+    Extinguish:
+      methods: [ Touch ]
+      effects:
+      - !type:ExtinguishReaction
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.8
+        sprintSpeedModifier: 0.8
+        statusLifetime: 5
+  tileReactions:
+  - !type:SpillTileReaction
+  - !type:ExtinguishTileReaction
+
+- type: reagent
+  parent: Blood
+  id: Scp096Blood
+  name: reagent-name-scp096-blood
+  group: Biological
+  desc: reagent-desc-scp096-blood
+  flavor: horrible
+  color: "#4F002B"
+  recognizable: false
+  physicalDesc: reagent-physical-desc-slimy
+  metabolisms:
+    Poison:
+      effects:
+      - !type:ChemVomit
+        probability: 0.15
+      - !type:Jitter
+      - !type:AdjustTemperature
+        amount: -5000
+    Medicine:
+      effects:
+      - !type:Oxygenate
+      - !type:ReduceRotting
+        seconds: 5
+  plantMetabolism:
+  - !type:PlantAdjustToxins
+    amount: 15
+  - !type:PlantAdjustWater
+    amount: 1
+  reactiveEffects:
+    Flammable:
+      methods: [ Touch ]
+      effects:
+      - !type:FlammableReaction
+        multiplier: 1.5
+      - !type:Ignite
+    Acidic:
+      methods: [ Touch ]
+      effects:
+      - !type:HealthChange
+        scaleByQuantity: true
+        ignoreResistances: false
+        damage:
+          types:
+            Caustic: 0.8
+      - !type:Paralyze
+        probability: 0.3
+    Extinguish:
+      methods: [ Touch ]
+      effects:
+      - !type:ExtinguishReaction
+      - !type:AdjustTemperature
+        amount: -4000
+    Unholy:
+      methods: [ Touch ]
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Heat: 3
+      - !type:Emote
+        emote: Scream
+        probability: 0.5
+  tileReactions:
+  - !type:SpillTileReaction
+  - !type:ExtinguishTileReaction
+  - !type:FlammableTileReaction
+    temperatureMultiplier: 1.5
+

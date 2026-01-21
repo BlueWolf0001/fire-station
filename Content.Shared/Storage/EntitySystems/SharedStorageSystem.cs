@@ -744,7 +744,7 @@ public abstract class SharedStorageSystem : EntitySystem
             // Fire edit start
             if (_sharedHandsSystem.TryPickupAnyHand(player, item, handsComp: player.Comp))
             {
-                RaiseLocalEvent(item, new EntityRemovedFromStorageEvent(storage));
+                RaiseLocalEvent(item, new EntityRemovedFromStorageEvent(storage, player));
 
                 if (storage.Comp.StorageRemoveSound != null && !_tag.HasTag(player, storage.Comp.SilentStorageUserTag))
                     Audio.PlayPredicted(storage.Comp.StorageRemoveSound, storage, player, _audioParams);
@@ -1049,7 +1049,8 @@ public abstract class SharedStorageSystem : EntitySystem
         bool ignoreStacks = false,
         bool ignoreLocation = false)
     {
-        if (!Resolve(uid, ref storageComp) || !Resolve(insertEnt, ref item, false))
+        // Fire edit - убрал из логов МЕТОДА ДЛЯ ПРОВЕРКИ непрохождение проверки на наличие компонента.
+        if (!Resolve(uid, ref storageComp, false) || !Resolve(insertEnt, ref item, false))
         {
             reason = null;
             return false;
@@ -1214,7 +1215,7 @@ public abstract class SharedStorageSystem : EntitySystem
                 Audio.PlayPredicted(storageComp.StorageInsertSound, uid, user, _audioParams);
 
             // Fire edit start
-            RaiseLocalEvent(insertEnt, new EntityInsertedIntoStorageEvent(uid));
+            RaiseLocalEvent(insertEnt, new EntityInsertedIntoStorageEvent(uid, user));
             // Fire edit end
 
             return true;
@@ -1248,7 +1249,7 @@ public abstract class SharedStorageSystem : EntitySystem
             Audio.PlayPredicted(storageComp.StorageInsertSound, uid, user, _audioParams);
 
         // Fire edit start
-        RaiseLocalEvent(insertEnt, new EntityInsertedIntoStorageEvent(uid));
+        RaiseLocalEvent(insertEnt, new EntityInsertedIntoStorageEvent(uid, user));
         // Fire edit end
 
         return true;

@@ -3,10 +3,11 @@
   name: job-name-senior-logistics-officer
   description: job-description-senior-logistics-officer
   playTimeTracker: JobSeniorLogisticsOfficer
-  requirements: # TODO: Поменять после того, как игроки наберут время на новых ролях
-  - !type:OverallPlaytimeRequirement
-    time: 90000 # 25 часов
-  weight: 10
+  requirements:
+  - !type:RoleTimeRequirement
+    role: JobLogisticsOfficer
+    time: 36000
+  weight: 935
   startingGear: SeniorLogisticsOfficerGear
   icon: JobSeniorLogisticsOfficer
   supervisors: job-supervisors-director
@@ -23,6 +24,11 @@
       class: C
     - type: AccessLevel
       level: Three
+    - type: ScpAnnounceOnSpawn
+      text: head-announce-on-spawn
+      channels:
+      - LogisticsService
+      includeJobName: true
 
 - type: startingGear
   id: SeniorLogisticsOfficerGear

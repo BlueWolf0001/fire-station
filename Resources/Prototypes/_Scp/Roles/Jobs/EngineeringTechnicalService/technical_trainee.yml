@@ -8,6 +8,7 @@
   supervisors: job-supervisors-chief-technical-specialist
   canBeAntag: true
   displayWeight: 0
+  weight: 740
   accessGroups:
   - CommonEngineeringJob
   special:
@@ -17,6 +18,7 @@
       class: C
     - type: AccessLevel
       level: Two
+    - type: ScpRepairableCanSeeExamineHints
 
 - type: startingGear
   id: TechnicalTraineeGear
