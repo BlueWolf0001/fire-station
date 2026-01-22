@@ -1,0 +1,11 @@
+user-profile-no-sponsor = Ausente
+user-profile-sponsor-title = Patrocínio
+user-profile-level = Nível:
+user-profile-social-links = Redes Sociais
+user-profile-sponsor-info-button = Informações
+user-profile-sponsor-buy-button = Comprar
+user-profile-service-link = Link
+user-profile-service-discord = Discord:
+user-profile-service-telegram = Telegram:
+user-profile-service-github = GitHub:
+user-profile-service-reset = Desvincular
