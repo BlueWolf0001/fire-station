@@ -1,44 +1,44 @@
 # Components
-spray-painter-ammo-on-examine = В нем {$charges} зарядов.
-spray-painter-ammo-after-interact-full = Распылитель полный!
-spray-painter-ammo-after-interact-refilled = Вы перезаряжаете распылитель.
+spray-painter-ammo-on-examine =Possui taxas de {$charges}.
+spray-painter-ammo-after-interact-full = O pulverizador está cheio!
+spray-painter-ammo-after-interact-refilled = Você está recarregando o pulverizador.
 
-spray-painter-interact-no-charges = Недостаточно краски.
-spray-painter-interact-nothing-to-remove = Нечего удалять!
+spray-painter-interact-no-charges = Não há tinta suficiente.
+spray-painter-interact-nothing-to-remove = Nada para apagar!
 
-spray-painter-on-examined-painted-message = Кажется что это только что покрасили.
-spray-painter-style-not-available = Невозможно применить выбранный стиль к этому объекту.
+spray-painter-on-examined-painted-message = Parece que foi pintado recentemente.
+spray-painter-style-not-available = O estilo selecionado não pode ser aplicado a este objeto.
 
-spray-painter-verb-toggle-decals = Вкл/Выкл рисование
+spray-painter-verb-toggle-decals = Desenho Liga/Desliga
 
-spray-painter-item-status-label = Рисунки: {$mode}
-spray-painter-item-status-add = [color=green]Нарисовать[/color]
-spray-painter-item-status-remove = [color=red]Стереть[/color]
-spray-painter-item-status-off = [color=gray]Выкл[/color]
+spray-painter-item-status-label = Desenhos: {$mode}
+spray-painter-item-status-add = [color=green]Empate[/color]
+spray-painter-item-status-remove = [color=red]Apagar[/color]
+spray-painter-item-status-off = [color=gray]Desligado[/color]
 
 # UI
-spray-painter-window-title = Краскопульт
+spray-painter-window-title = Pistola de pulverização
 
-spray-painter-selected-style = Выбранный стиль:
+spray-painter-selected-style = Estilo selecionado:
 
-spray-painter-selected-decals = Выбранная наклейка:
-spray-painter-use-custom-color = Использовать свой цвет
-spray-painter-use-snap-to-tile = Привязать к плитке
+spray-painter-selected-decals = Adesivo selecionado:
+spray-painter-use-custom-color = Use a sua própria cor.
+spray-painter-use-snap-to-tile = Ajuste ao mosaico
 
-spray-painter-angle-rotation = Вращение:
+spray-painter-angle-rotation = Rotação:
 spray-painter-angle-rotation-90-sub = -90°
 spray-painter-angle-rotation-reset = 0°
 spray-painter-angle-rotation-90-add = +90°
 
-spray-painter-selected-color = Выбранный цвет:
-spray-painter-color-red = красный
-spray-painter-color-yellow = желтый
-spray-painter-color-brown = коричневый
-spray-painter-color-green = зеленый
-spray-painter-color-cyan = голубой
-spray-painter-color-blue = синий
-spray-painter-color-white = белый
-spray-painter-color-black = черный
+spray-painter-selected-color = Cor selecionada:
+spray-painter-color-red = vermelho
+spray-painter-color-yellow = amarelo
+spray-painter-color-brown = marrom
+spray-painter-color-green = verde
+spray-painter-color-cyan = ciano
+spray-painter-color-blue = azul
+spray-painter-color-white = branco
+spray-painter-color-black = negro
 
 # Categories (tabs)
 spray-painter-tab-category-airlocks = Шлюзы
